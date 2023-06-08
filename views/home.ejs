@@ -1,12 +1,19 @@
-<%- include("partials/header") -%>
+
+<%- include("partials/header"); -%>
     <h1>Home</h1>
-    <p><%= para1 %></p>
-    <% postLogs.forEach(function(log){ %>
-    <div>
-       <h2>  <%= log.title  %>   </h2>
-       <!-- <p>  <%= log.content.substring(0,100)+" ..." %><a href="/posts/<%= log.title %>">Read more</a>  </p> -->
-       <p>  <%= log.content %></p>
-    </div>   
-       <br>
-   <% }) %>
-<%- include("partials/footer") -%>
+    <p> <%= startingContent %> </p>
+
+
+  <%  posts.forEach(function(post){ %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post.title%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
